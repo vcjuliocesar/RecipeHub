@@ -7,11 +7,10 @@ class Server {
     constructor() {
         this.app = express();
         this.config();
-        this.start();
     }
 
     config() {
-        this.app.set('port',process.env.PORT || 3001);
+        this.app.set('port',process.env.PORT || 3000);
     }
 
     routes() {
@@ -20,8 +19,8 @@ class Server {
 
     start(){
         this.app.listen(this.app.get('port'),() => {
-            console.log('Server on port ',this.app.get('port'))
-        })
+            console.log('Server on port ',this.app.get('port'));
+        });
     } 
 }
 
